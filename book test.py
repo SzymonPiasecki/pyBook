@@ -9,5 +9,17 @@ class TestBook(unittest.TestCase):
         text_result = self.book.get_info()
         self.assertEqual(text_correct, text_result)
 
+    def test_change_title(self):
+        self.book.change_title("Miecz przeznaczenia")
+        self.assertEqual("Miecz przeznaczenia", self.book.title)
+
+    def test_change_author(self):
+        self.book.change_author("Sapkowski2")
+        self.assertEqual("Sapkowski2", self.book.author)
+
+    def test_change_year(self):
+        self.book.change_year(2001)
+        self.assertEqual(2001, self.book.year)
+
 if __name__ == '__main__':
     unittest.main()
